@@ -1,1 +1,3 @@
-console.log("FUNCIONAAA");
+import "./styles.css";
+
+//console.log("FUNCIONAAA");
