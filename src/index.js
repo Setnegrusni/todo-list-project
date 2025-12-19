@@ -1,12 +1,17 @@
 import "./styles.css";
-
+//=================
 //Global variables
+//=================
 const btNewProject = document.querySelector("#new-project");
 
 //Page start
 firstLoad();
 
+//==========
 //Functions
+//==========
+
+//Función que incializa la página
 function firstLoad() {
     const defaultProject = new project("All ToDo's");
 
@@ -14,6 +19,7 @@ function firstLoad() {
     displayProject(new project("Prueba"));
 }
 
+//Función que muestra un proyecto nuevo
 function displayProject(myProject) {
     const projectSection = document.querySelector(".project-section");
     const newProjectArea = document.createElement("div");
@@ -34,6 +40,10 @@ function displayProject(myProject) {
     newProjectArea.appendChild(projectName);
 }
 
+//=============
+//Constructors
+//=============
+
 //Contructor to create a new project
 function project(title) {
     this.id = crypto.randomUUID();
@@ -49,7 +59,9 @@ function toDo(title, description, dueDate, priority) {
     this.priority = priority;
 }
 
+//================
 //Event listeners
+//================
 
 btNewProject.addEventListener("click", (e) => {
     //console.log("Helloooo");
