@@ -1,3 +1,24 @@
+html,
 body {
-    background-color: red;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 8fr 1fr;
+}
+
+/*Para ver los bordes de los divs*/
+div {
+    border: 1px solid black;
+}
+
+.project {
+    height: 5vh;
+}
+
+.project-title {
+    margin: 0;
 }
