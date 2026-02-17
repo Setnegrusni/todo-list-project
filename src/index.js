@@ -1,8 +1,16 @@
 import "./styles.css";
+import { project, displayProject } from "./project.js";
+import toDo from "./todo.js";
+
 //=================
 //Global variables
 //=================
 const btNewProject = document.querySelector("#new-project");
+const projectDialog = document.querySelector("#project-modal");
+const btAddProject = document.querySelector("#new-project");
+const btCloseModal = document.querySelector("#close-modal");
+
+const btNewTodo = document.querySelector("#new-todo");
 
 //Page start
 firstLoad();
@@ -13,50 +21,10 @@ firstLoad();
 
 //Función que incializa la página
 function firstLoad() {
-    const defaultProject = new project("All ToDo's");
+    const defaultProject = new project("Default");
 
     displayProject(defaultProject);
     displayProject(new project("Prueba"));
-}
-
-//Función que muestra un proyecto nuevo
-function displayProject(myProject) {
-    const projectSection = document.querySelector(".project-section");
-    const newProjectArea = document.createElement("div");
-    const projectName = document.createElement("p");
-    const projectTitle = document.querySelector("#project-name");
-
-    newProjectArea.classList.add("project");
-    newProjectArea.setAttribute("data-id", myProject.id);
-
-    newProjectArea.addEventListener("click", (e) => {
-        projectTitle.textContent = e.target.textContent;
-    })
-
-    projectName.classList.add("project-title");
-    projectName.textContent = myProject.title;
-
-    projectSection.appendChild(newProjectArea);
-    newProjectArea.appendChild(projectName);
-}
-
-//=============
-//Constructors
-//=============
-
-//Contructor to create a new project
-function project(title) {
-    this.id = crypto.randomUUID();
-    this.title = title;
-}
-
-//constructor to create a new ToDo
-function toDo(title, description, dueDate, priority) {
-    this.id = crypto.randomUUID();
-    this.title = title;
-    this.description = description;
-    this.dueDate = dueDate;
-    this.priority = priority;
 }
 
 //================
@@ -65,4 +33,9 @@ function toDo(title, description, dueDate, priority) {
 
 btNewProject.addEventListener("click", (e) => {
     //console.log("Helloooo");
-})
+    projectDialog.showModal();
+});
+
+btCloseModal.addEventListener("click", (e) => {
+    projectDialog.close();
+});
