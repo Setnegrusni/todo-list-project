@@ -15,10 +15,44 @@ div {
     border: 1px solid black;
 }
 
+.app-icon,
+.project-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.side-panel > div > p {
+    text-align: center;
+}
+
 .project {
+    display: flex;
+    justify-content: space-between;
     height: 5vh;
+}
+
+.project > div {
+    width: 100%;
+}
+
+.proj-name,
+.del-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .project-title {
     margin: 0;
+}
+
+.add-project-todo {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.add-project-todo > button {
+    height: 5vh;
 }
