@@ -24,14 +24,17 @@ function displayProject(myProject) {
     projectName.textContent = myProject.title;
     projectNameDiv.classList.add("proj-name");
     delButtonDiv.classList.add("del-button");
+    if (myProject.title === "Default") {
+        projectNameDiv.setAttribute("data-default", "Default");
+    }
 
     projectSection.appendChild(newProjectArea);
     newProjectArea.appendChild(projectNameDiv);
     newProjectArea.appendChild(delButtonDiv);
     projectNameDiv.appendChild(projectName);
-    //newProjectArea.appendChild(projectName);
 
     addProjectElements(myProject.id, myProject.title);
+    clickDefaultProject();
 }
 
 function addProjectElements(projectID, projectTitle) {
@@ -44,6 +47,11 @@ function addProjectElements(projectID, projectTitle) {
     if (projectTitle != "Default") {
         myProject.appendChild(myDelButton);
     }
+}
+
+function clickDefaultProject(){
+    const myDefProj = document.querySelector("[data-default='Default']");
+    myDefProj.click();
 }
 
 export { project, displayProject };
