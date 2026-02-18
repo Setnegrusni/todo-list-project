@@ -1,3 +1,4 @@
+/*General*/
 html,
 body {
     margin: 0;
@@ -15,6 +16,7 @@ div {
     border: 1px solid black;
 }
 
+/*First row*/
 .app-icon,
 .project-name {
     display: flex;
@@ -22,6 +24,7 @@ div {
     align-items: center;
 }
 
+/*Second row*/
 .side-panel > div > p {
     text-align: center;
 }
@@ -32,21 +35,32 @@ div {
     height: 5vh;
 }
 
-.project > div {
-    width: 100%;
+.proj-name {
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
 }
 
-.proj-name,
 .del-button {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.project-title {
-    margin: 0;
+.proj-name {
+    width: 70%;
 }
 
+.del-button {
+    width: 30%;
+}
+
+#deleteProject {
+    width: 90%;
+    height: 80%;
+}
+
+/*Third row*/
 .add-project-todo {
     display: flex;
     justify-content: space-evenly;
@@ -55,4 +69,22 @@ div {
 
 .add-project-todo > button {
     height: 5vh;
+    width: 45%;
+}
+
+.credit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Modals*/
+.project-title {
+    margin-bottom: 16px;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: end;
+    gap: 5%;
 }
