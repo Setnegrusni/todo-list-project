@@ -5,12 +5,13 @@ import toDo from "./todo.js";
 //=================
 //Global variables
 //=================
-const btNewProject = document.querySelector("#new-project");
-const projectDialog = document.querySelector("#project-modal");
-const btAddProject = document.querySelector("#new-project");
-const btCloseModal = document.querySelector("#close-modal");
+const btNewProject = document.querySelector("#newProject");
+const projectDialog = document.querySelector("#projectModal");
+const tfProject = document.querySelector("#projectName");
+const btAddProject = document.querySelector("#addingProject");
+const btCloseModal = document.querySelector("#closeModal");
 
-const btNewTodo = document.querySelector("#new-todo");
+const btNewTodo = document.querySelector("#newTodo");
 
 //Page start
 firstLoad();
@@ -32,10 +33,13 @@ function firstLoad() {
 //================
 
 btNewProject.addEventListener("click", (e) => {
-    //console.log("Helloooo");
     projectDialog.showModal();
 });
 
 btCloseModal.addEventListener("click", (e) => {
     projectDialog.close();
+});
+
+btAddProject.addEventListener("click", (e) => {
+    displayProject(new project(tfProject.value));
 });
